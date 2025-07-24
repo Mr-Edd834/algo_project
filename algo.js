@@ -16,6 +16,7 @@ form.addEventListener("submit", function(e) {
     e.preventDefault(); // prevent the form from submitting
     analyzeSentence(); // call the function to analyze the sentence
     countVowels(); // call the function to count vowels
+    characterCounter(); // call the function to count characters
 });
 
 // adding vowelcounter
@@ -31,5 +32,15 @@ function countVowels() {
     }
 
 document.getElementById("vowelCount").innerHTML = `Number of vowels: ${vowelCount}`;
+}
+
+// adding character counter
+function characterCounter(){
+    const sentence = sentenceInput.value.trim(); // get the input text
+    let charCount=0;
+    for(let i=0; i<sentence.length; i++){
+        charCount++;
+    }
+document.getElementById("charCount").innerHTML = `Number of characters: ${charCount}`;
 }
 
